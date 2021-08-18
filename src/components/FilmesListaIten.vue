@@ -2,7 +2,7 @@
     <!--<input type="text" :value="titulo" :placeholder="$attrs.placeholder">-->
     <li class="list-group-item">
         <span>{{ filme.titulo }} | {{ filme.ano }}</span>
-        <button class="btn btn-success float-right" @click="selecionar(event)">Editar</button>
+        <button class="btn btn-success float-right" @click="selecionar">Editar</button>
     </li>
 </template>
 
@@ -35,14 +35,15 @@ export default {
        },
     },
     methods: {
-        selecionar () {
+        selecionar(event) {
+            event
             this.$emit('selecionarFilme', this.filme)
         },
     },
     computed: {
-        filmeTituloConcatenado () {
-            return `Filme: ${this.titulo}`
-        }
+        // filmeTituloConcatenado () {
+        //    return `Filme: ${this.titulo}`
+        // }
     },
     created () {
         // console.log('Filme: ' + this.titulo)

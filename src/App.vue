@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">Lista de Filmes</h1>
@@ -19,6 +18,10 @@
 import FilmesLista from './components/FilmesLista.vue'
 
 export default {
+  data () {
+    return {
+    }
+  },
   components: {
     FilmesLista
   }

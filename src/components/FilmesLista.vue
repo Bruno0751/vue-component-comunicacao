@@ -6,14 +6,16 @@
 
       <h2>Filmes</h2>
 
-      <div class="list-group list-group-flush">
+      <ul class="list-group list-group-flush">
 
         <FilmesListaIten
-          v-for="(filme, index) in filmes"
-          :key="index" :filmeTitulo="filme" />
+          v-for="filme in filmes"
+          :key="filme.id"
+          :filme="filme"
+          @selecionarFilme="filmeSelecionado = $event" />
 
 
-      </div>
+      </ul>
     </div>
 
     <!-- coluna 2 -->
@@ -39,10 +41,11 @@ export default {
   data() {
     return {
       filmes: [
-        'Viuva Negra',
-        'Homem Aranha de Volta ao Lar',
-        'Homem de Ferro',
-      ]
+        { id: 1, titulo: 'Viuva Negra', ano: 2020, diretor: 'Stan Lee' },
+        { id: 2, titulo:'Homem Aranha de Volta ao Lar', ano: 2020, diretor: 'Stan Lee' },
+        { id: 3, titulo:'Homem de Ferro', ano: 2020, diretor: 'Stan Lee'},
+      ],
+      filmeSelecionado: undefined,
     }
   }
 }
